@@ -7,8 +7,8 @@ License:	GPL
 # not sure about this Group:
 Group:		Networking/Utilities
 Vendor:		Uriah Welcome <precision@users.sourceforge.net>
-Source0:	http://prdownloads.sourceforge.net/phpsysinfo/%{name}-%{version}.tar.gz
-URL:		http://phpsysinfo.sourceforge.net
+Source0:	http://dl.sourceforge.net/phpsysinfo/%{name}-%{version}.tar.gz
+URL:		http://phpsysinfo.sourceforge.net/
 Requires:	php
 Requires:	php-xml
 Requires:	php-pcre
