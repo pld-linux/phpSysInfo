@@ -10,7 +10,7 @@ Vendor:		Uriah Welcome <precision@users.sourceforge.net>
 Source0:	http://dl.sourceforge.net/phpsysinfo/phpsysinfo-%{version}.tar.gz
 # Source0-md5:	8e9a2b7a099e26cbd85f140475512ccc
 Source1:	%{name}.conf
-Source2:	PLD.gif
+Source2:	%{name}-PLD.gif
 Patch0:		%{name}-PLD.patch
 URL:		http://phpsysinfo.sourceforge.net/
 Requires:	php
