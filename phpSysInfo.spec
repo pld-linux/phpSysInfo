@@ -18,7 +18,7 @@ Requires:	webserver
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _sysinfodir	%{_datadir}/%{name}
+%define		_sysinfodir	%{_datadir}/%{name}
 %define		_sysconfdir	/etc/%{name}
 
 %description
@@ -78,14 +78,14 @@ fi
 if [ "$1" = "0" ]; then
 	umask 027
 	if [ -d /etc/httpd/httpd.conf ]; then
-	    rm -f /etc/httpd/httpd.conf/99_%{name}.conf
+		rm -f /etc/httpd/httpd.conf/99_%{name}.conf
 	else
 		grep -v "^Include.*%{name}.conf" /etc/httpd/httpd.conf > \
 			/etc/httpd/httpd.conf.tmp
 		mv -f /etc/httpd/httpd.conf.tmp /etc/httpd/httpd.conf
 	fi
 	if [ -f /var/lock/subsys/httpd ]; then
-	    /usr/sbin/apachectl restart 1>&2
+		/usr/sbin/apachectl restart 1>&2
 	fi
 fi
 
