@@ -24,7 +24,11 @@ information nicely. It will display information about system facts
 like Uptime, CPU, Memory, PCI devices, SCSI devices, IDE devices,
 Network adapters, Disk usage, and more.
 
-# TODO #%description -l pl
+%description -l pl
+PHPSysInfo jest skryptem PHP, który mo¿emy dopasowaæ do naszych
+potrzeb. Przetwarza on /proc, i w ³adny sposób pokazuje informacje
+m.in. na temat: uptime, procesora, pamiêci, urz±dzeñ PCI, SCSI, IDE,
+interfejsów sieciowych czy dysków.
 
 %prep
 %setup -q
