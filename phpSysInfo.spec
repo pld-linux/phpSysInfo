@@ -7,6 +7,7 @@ License:	GPL
 # not sure about this Group:
 Group:		Networking/Utilities
 Vendor:		Uriah Welcome <precision@users.sourceforge.net>
+# Source0-md5:	22d4d7977dfff237f8e0aa3e4ebaee75
 Source0:	http://dl.sourceforge.net/phpsysinfo/%{name}-%{version}.tar.gz
 URL:		http://phpsysinfo.sourceforge.net/
 Requires:	php
