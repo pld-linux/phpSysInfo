@@ -2,7 +2,7 @@ Summary:	phpSysInfo is a PHP script that displays information about the host bei
 Summary(pl):	phpSysInfo jest skryptem PHP wy¶wietlaj±cym informacje o wywo³anym hoscie
 Name:		phpSysInfo
 Version:	2.3
-Release:	1
+Release:	2
 License:	GPL
 # not sure about this Group:
 Group:		Networking/Utilities
@@ -10,6 +10,8 @@ Vendor:		Uriah Welcome <precision@users.sourceforge.net>
 Source0:	http://dl.sourceforge.net/phpsysinfo/phpsysinfo-%{version}.tar.gz
 # Source0-md5:	8e9a2b7a099e26cbd85f140475512ccc
 Source1:	%{name}.conf
+Source2:	PLD.gif
+Patch0:		%{name}-PLD.patch
 URL:		http://phpsysinfo.sourceforge.net/
 Requires:	php
 Requires:	php-xml
@@ -35,6 +37,7 @@ interfejsów sieciowych czy dysków.
 
 %prep
 %setup -q -n phpsysinfo-dev
+%patch0 -p1
  
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -43,7 +46,7 @@ install -d $RPM_BUILD_ROOT%{_sysinfodir}/images \
 	$RPM_BUILD_ROOT{%{_sysconfdir},/etc/httpd}
 
 install config.php.new index.php phpsysinfo.dtd $RPM_BUILD_ROOT%{_sysinfodir}
-install images/*.gif $RPM_BUILD_ROOT%{_sysinfodir}/images
+install images/*.gif %{SOURCE2} $RPM_BUILD_ROOT%{_sysinfodir}/images
 install includes/*.php $RPM_BUILD_ROOT%{_sysinfodir}/includes
 install includes/lang/*.php $RPM_BUILD_ROOT%{_sysinfodir}/includes/lang
 install includes/mb/*.php $RPM_BUILD_ROOT%{_sysinfodir}/includes/mb
