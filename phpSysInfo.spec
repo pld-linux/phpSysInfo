@@ -16,7 +16,7 @@ Requires:	webserver
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _phpsysinfodir     /home/httpd/html/phpSysInfo
+%define         _phpsysinfodir     /home/services/httpd/html/phpSysInfo
 
 %description
 PHPSysInfo is a customizable PHP Script that parses /proc, and formats
