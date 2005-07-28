@@ -47,6 +47,7 @@ install -d $RPM_BUILD_ROOT%{_sysinfodir}/images \
 
 install config.php.new index.php phpsysinfo.dtd $RPM_BUILD_ROOT%{_sysinfodir}
 install images/*.gif %{SOURCE2} $RPM_BUILD_ROOT%{_sysinfodir}/images
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sysinfodir}/images/PLD.gif
 install includes/*.php $RPM_BUILD_ROOT%{_sysinfodir}/includes
 install includes/lang/*.php $RPM_BUILD_ROOT%{_sysinfodir}/includes/lang
 install includes/mb/*.php $RPM_BUILD_ROOT%{_sysinfodir}/includes/mb
