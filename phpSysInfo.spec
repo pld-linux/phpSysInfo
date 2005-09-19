@@ -13,6 +13,7 @@ Source1:	%{name}.conf
 Source2:	%{name}-PLD.gif
 Patch0:		%{name}-PLD.patch
 URL:		http://phpsysinfo.sourceforge.net/
+Requires:	issue
 Requires:	php
 Requires:	php-xml
 Requires:	php-pcre
