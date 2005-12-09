@@ -1,14 +1,14 @@
 Summary:	phpSysInfo is a PHP script that displays information about the host being accessed
 Summary(pl):	phpSysInfo jest skryptem PHP wy¶wietlaj±cym informacje o wywo³anym hoscie
 Name:		phpSysInfo
-Version:	2.3
-Release:	2
+Version:	2.5
+Release:	1
 License:	GPL
 # not sure about this Group:
 Group:		Networking/Utilities
 Vendor:		Uriah Welcome <precision@users.sourceforge.net>
 Source0:	http://dl.sourceforge.net/phpsysinfo/phpsysinfo-%{version}.tar.gz
-# Source0-md5:	8e9a2b7a099e26cbd85f140475512ccc
+# Source0-md5:	78ad80176b787754eb1019c7e8f38caa
 Source1:	%{name}.conf
 Source2:	%{name}-PLD.gif
 Patch0:		%{name}-PLD.patch
@@ -37,8 +37,8 @@ m.in. na temat: uptime, procesora, pamiêci, urz±dzeñ PCI, SCSI, IDE,
 interfejsów sieciowych czy dysków.
 
 %prep
-%setup -q -n phpsysinfo-dev
-%patch0 -p1
+%setup -q -n phpsysinfo
+%patch0 -p0
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -46,8 +46,8 @@ install -d $RPM_BUILD_ROOT%{_sysinfodir}/images \
 	$RPM_BUILD_ROOT%{_sysinfodir}/includes/{lang,mb,os,xml} \
 	$RPM_BUILD_ROOT{%{_sysconfdir},/etc/httpd}
 
-install config.php.new index.php phpsysinfo.dtd $RPM_BUILD_ROOT%{_sysinfodir}
-install images/*.gif %{SOURCE2} $RPM_BUILD_ROOT%{_sysinfodir}/images
+install index.php phpsysinfo.dtd distros.ini $RPM_BUILD_ROOT%{_sysinfodir}
+install images/*.gif images/*.png %{SOURCE2} $RPM_BUILD_ROOT%{_sysinfodir}/images
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysinfodir}/images/PLD.gif
 install includes/*.php $RPM_BUILD_ROOT%{_sysinfodir}/includes
 install includes/lang/*.php $RPM_BUILD_ROOT%{_sysinfodir}/includes/lang
@@ -104,6 +104,7 @@ fi
 %{_sysinfodir}/config.php
 %{_sysinfodir}/index.php
 %{_sysinfodir}/phpsysinfo.dtd
+%{_sysinfodir}/distros.ini
 %{_sysinfodir}/images
 %{_sysinfodir}/includes
 %{_sysinfodir}/templates
