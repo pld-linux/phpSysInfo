@@ -1,22 +1,10 @@
---- phpsysinfo/includes/os/class.Linux.inc.php.orig	2005-01-22 16:10:45.168602016 +0100
-+++ phpsysinfo/includes/os/class.Linux.inc.php	2005-01-22 16:07:15.758566823 +0100
-@@ -452,6 +452,10 @@
-       $buf = fgets($fd, 1024);
-       fclose($fd);
-       $result = 'Debian ' . trim($buf);
-+   } elseif ($fd = fopen('/etc/pld-release', 'r')) {
-+      $buf = fgets($fd, 1024);
-+      fclose($fd);
-+      $result = trim($buf);
-    } elseif ($fd = fopen('/etc/SuSE-release', 'r')) {
-       $buf = fgets($fd, 1024);
-       fclose($fd);
-@@ -497,6 +501,8 @@
-   function distroicon () {   
-    if (file_exists('/etc/debian_version')) {
-       $result = 'Debian.gif';
-+   } elseif (file_exists('/etc/pld-release')) {
-+      $result = 'PLD.gif';
-    } elseif (file_exists('/etc/SuSE-release')) {
-       $result = 'Suse.gif';
-    } elseif (file_exists('/etc/mandrake-release')) {
+--- distros.ini.old	2005-11-22 15:30:28.000000000 +0100
++++ distros.ini	2005-12-05 23:35:57.000000000 +0100
+@@ -58,3 +58,7 @@
+ 
+ [Ubunto]
+ Files = "/etc/lsb-release"
++
++[PLD]
++Image = "PLD.gif"
++Files = "/etc/pld-release"
