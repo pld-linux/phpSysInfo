@@ -1,14 +1,14 @@
 Summary:	phpSysInfo is a PHP script that displays information about the host being accessed
 Summary(pl):	phpSysInfo jest skryptem PHP wy¶wietlaj±cym informacje o wywo³anym hoscie
 Name:		phpSysInfo
-Version:	2.5
+Version:	2.5.1
 Release:	1
 License:	GPL
 # not sure about this Group:
 Group:		Networking/Utilities
 Vendor:		Uriah Welcome <precision@users.sourceforge.net>
 Source0:	http://dl.sourceforge.net/phpsysinfo/phpsysinfo-%{version}.tar.gz
-# Source0-md5:	78ad80176b787754eb1019c7e8f38caa
+# Source0-md5:	3b42b9df6685c81241d807a8ec8b1254
 Source1:	%{name}.conf
 Source2:	%{name}-PLD.gif
 Patch0:		%{name}-PLD.patch
