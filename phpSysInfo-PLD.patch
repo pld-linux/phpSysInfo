@@ -8,3 +8,20 @@
 +[PLD]
 +Image = "PLD.gif"
 +Files = "/etc/pld-release"
+--- index.php~	2005-12-15 10:35:00.000000000 +0200
++++ index.php	2005-12-28 10:18:53.000000000 +0200
+@@ -22,12 +22,12 @@
+ ini_set('magic_quotes_runtime', 'off');
+ ini_set('register_globals', 'off');
+ 
+-if (!file_exists(APP_ROOT . '/config.php')) {
++if (!file_exists('/etc/webapps/phpsysinfo/config.php')) {
+   echo '<center><b>Error: config.php does not exist.</b></center>';
+   exit;
+ } 
+ 
+-require_once(APP_ROOT . '/config.php'); // get the config file
++require_once('/etc/webapps/phpsysinfo/config.php'); // get the config file
+ 
+ if (!extension_loaded('xml')) {
+   echo '<center><b>Error: phpsysinfo requires xml module.</b></center>';
