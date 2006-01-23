@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/phpsysinfo/phpsysinfo-%{version}.tar.gz
 # Source0-md5:	3b42b9df6685c81241d807a8ec8b1254
 Source1:	%{name}.conf
 Source2:	%{name}-PLD.gif
+Source3:	%{name}-lighttpd.conf
 Patch0:		%{name}-PLD.patch
 URL:		http://phpsysinfo.sourceforge.net/
 BuildRequires:	rpmbuild(macros) >= 1.264
@@ -60,6 +61,7 @@ rm $RPM_BUILD_ROOT%{_appdir}/templates/index.html
 install config.php.new $RPM_BUILD_ROOT%{_sysconfdir}/config.php
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/apache.conf
+install %{SOURCE3} $RPM_BUILD_ROOT%{_sysconfdir}/lighttpd.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
