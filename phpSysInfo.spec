@@ -2,7 +2,7 @@ Summary:	phpSysInfo is a PHP script that displays information about the host bei
 Summary(pl):	phpSysInfo jest skryptem PHP wy¶wietlaj±cym informacje o wywo³anym hoscie
 Name:		phpSysInfo
 Version:	2.5.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/phpsysinfo/phpsysinfo-%{version}.tar.gz
@@ -12,7 +12,7 @@ Source2:	%{name}-PLD.gif
 Source3:	%{name}-lighttpd.conf
 Patch0:		%{name}-PLD.patch
 URL:		http://phpsysinfo.sourceforge.net/
-BuildRequires:	rpmbuild(macros) >= 1.264
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	issue
 Requires:	php
 Requires:	php-pcre
@@ -104,9 +104,7 @@ fi
 
 rm -f /etc/httpd/httpd.conf/99_%{name}.conf
 /usr/sbin/webapp register httpd %{_webapp}
-if [ -f /var/lock/subsys/httpd ]; then
-	/etc/rc.d/init.d/httpd reload 1>&2
-fi
+%service -q httpd reload
 
 %files
 %defattr(644,root,root,755)
