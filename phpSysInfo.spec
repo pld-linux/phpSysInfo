@@ -1,5 +1,5 @@
 Summary:	phpSysInfo is a PHP script that displays information about the host being accessed
-Summary(pl):	phpSysInfo jest skryptem PHP wy¶wietlaj±cym informacje o wywo³anym hoscie
+Summary(pl.UTF-8):   phpSysInfo jest skryptem PHP wyÅ›wietlajÄ…cym informacje o wywoÅ‚anym hoscie
 Name:		phpSysInfo
 Version:	2.5.1
 Release:	6
@@ -32,11 +32,11 @@ information nicely. It will display information about system facts
 like Uptime, CPU, Memory, PCI devices, SCSI devices, IDE devices,
 Network adapters, Disk usage, and more.
 
-%description -l pl
-PHPSysInfo jest skryptem PHP, który mo¿emy dopasowaæ do naszych
-potrzeb. Przetwarza on /proc, i w ³adny sposób pokazuje informacje
-m.in. na temat: uptime, procesora, pamiêci, urz±dzeñ PCI, SCSI, IDE,
-interfejsów sieciowych czy dysków.
+%description -l pl.UTF-8
+PHPSysInfo jest skryptem PHP, ktÃ³ry moÅ¼emy dopasowaÄ‡ do naszych
+potrzeb. Przetwarza on /proc, i w Å‚adny sposÃ³b pokazuje informacje
+m.in. na temat: uptime, procesora, pamiÄ™ci, urzÄ…dzeÅ„ PCI, SCSI, IDE,
+interfejsÃ³w sieciowych czy dyskÃ³w.
 
 %prep
 %setup -q -n phpsysinfo
