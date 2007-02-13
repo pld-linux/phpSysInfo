@@ -1,5 +1,5 @@
 Summary:	phpSysInfo is a PHP script that displays information about the host being accessed
-Summary(pl.UTF-8):   phpSysInfo jest skryptem PHP wyświetlającym informacje o wywołanym hoscie
+Summary(pl.UTF-8):	phpSysInfo jest skryptem PHP wyświetlającym informacje o wywołanym hoscie
 Name:		phpSysInfo
 Version:	2.5.1
 Release:	6
