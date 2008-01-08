@@ -1,27 +1,16 @@
---- distros.ini.old	2005-11-22 15:30:28.000000000 +0100
-+++ distros.ini	2005-12-05 23:35:57.000000000 +0100
-@@ -58,3 +58,7 @@
- 
- [Ubunto]
- Files = "/etc/lsb-release"
-+
-+[PLD]
-+Image = "PLD.gif"
-+Files = "/etc/pld-release"
---- index.php~	2005-12-15 10:35:00.000000000 +0200
-+++ index.php	2005-12-28 10:18:53.000000000 +0200
-@@ -22,12 +22,12 @@
- ini_set('magic_quotes_runtime', 'off');
- ini_set('register_globals', 'off');
+diff -uNr phpsysinfo-orig/index.php phpsysinfo/index.php
+--- phpsysinfo-orig/index.php	2008-01-08 10:44:45.000000000 +0100
++++ phpsysinfo/index.php	2008-01-08 10:54:23.000000000 +0100
+@@ -40,10 +40,10 @@
+   $error->addError('extension_loaded(pcre)', 'phpsysinfo requires the pcre module for php to work', __LINE__, __FILE__);
+ } 
  
 -if (!file_exists(APP_ROOT . '/config.php')) {
 +if (!file_exists('/etc/webapps/phpsysinfo/config.php')) {
-   echo '<center><b>Error: config.php does not exist.</b></center>';
-   exit;
- } 
+   $error->addError('file_exists(config.php)', 'config.php does not exist in the phpsysinfo directory.', __LINE__, __FILE__);
+ } else { 
+-  require_once(APP_ROOT . '/config.php'); 			// get the config file
++  require_once('/etc/webapps/phpsysinfo/config.php'); 			// get the config file
+ }
  
--require_once(APP_ROOT . '/config.php'); // get the config file
-+require_once('/etc/webapps/phpsysinfo/config.php'); // get the config file
- 
- if (!extension_loaded('xml')) {
-   echo '<center><b>Error: phpsysinfo requires xml module.</b></center>';
+ if ( !empty( $sensor_program ) ) {
