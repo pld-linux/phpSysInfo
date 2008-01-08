@@ -1,15 +1,14 @@
 Summary:	phpSysInfo is a PHP script that displays information about the host being accessed
 Summary(pl.UTF-8):	phpSysInfo jest skryptem PHP wyświetlającym informacje o wywołanym hoscie
 Name:		phpSysInfo
-Version:	2.5.1
-Release:	6
+Version:	2.5.4
+Release:	1
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/phpsysinfo/phpsysinfo-%{version}.tar.gz
-# Source0-md5:	3b42b9df6685c81241d807a8ec8b1254
+# Source0-md5:	5bf79793255ff24d5f9cbc6a62705aa7
 Source1:	%{name}.conf
-Source2:	%{name}-PLD.gif
-Source3:	%{name}-lighttpd.conf
+Source2:	%{name}-lighttpd.conf
 Patch0:		%{name}-PLD.patch
 URL:		http://phpsysinfo.sourceforge.net/
 BuildRequires:	rpmbuild(macros) >= 1.268
@@ -40,7 +39,7 @@ interfejsów sieciowych czy dysków.
 
 %prep
 %setup -q -n phpsysinfo
-%patch0 -p0
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -48,7 +47,6 @@ install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{_appdir}/{images,includes/{lang,mb,o
 
 install index.php phpsysinfo.dtd distros.ini $RPM_BUILD_ROOT%{_appdir}
 install images/*.gif images/*.png %{SOURCE2} $RPM_BUILD_ROOT%{_appdir}/images
-install %{SOURCE2} $RPM_BUILD_ROOT%{_appdir}/images/PLD.gif
 install includes/*.php $RPM_BUILD_ROOT%{_appdir}/includes
 install includes/lang/*.php $RPM_BUILD_ROOT%{_appdir}/includes/lang
 install includes/mb/*.php $RPM_BUILD_ROOT%{_appdir}/includes/mb
@@ -61,7 +59,7 @@ rm $RPM_BUILD_ROOT%{_appdir}/templates/index.html
 install config.php.new $RPM_BUILD_ROOT%{_sysconfdir}/config.php
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/apache.conf
-install %{SOURCE3} $RPM_BUILD_ROOT%{_sysconfdir}/lighttpd.conf
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/lighttpd.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
